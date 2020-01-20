@@ -30,7 +30,7 @@ function initMap() {
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 10, center: crosses});
   // The marker, positioned in Lithuania
-  var marker = new google.maps.Marker({position: crosses, color:Pink, map: map});
+  var marker = new google.maps.Marker({position: crosses, color:pink, map: map});
 }
     </script>
     <!--Load the API from the specified URL

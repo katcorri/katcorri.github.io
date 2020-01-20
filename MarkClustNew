@@ -33,7 +33,7 @@
         });
 
         // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var labels = '1A2B3C4D5!@#$%^&*';
 
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to
@@ -58,7 +58,9 @@
         {lat: -35.304724, lng: 148.662905},
         {lat: -36.817685, lng: 175.699196},
         {lat: -36.828611, lng: 175.790222},
-       
+        {lat: -6.3150, lng:143.95555},
+        {lat: -9.4438, lat: 147.1803},
+        {lat: -10.315703, lng: 150.458786},
         {lat: -37.770104, lng: 145.143299},
         {lat: -37.773700, lng: 145.145187},
         {lat: -37.774785, lng: 145.137978},

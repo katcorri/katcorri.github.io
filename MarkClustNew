@@ -69,8 +69,8 @@
         {lat: -42.735258, lng: 147.438000},
         {lat: -43.999792, lng: 170.463352}
       ]
-    </script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+   </script>
+    <script src="katcorri.github.io/MarkerClustering">
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k&callback=initMap">

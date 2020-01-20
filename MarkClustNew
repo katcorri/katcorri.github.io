@@ -29,7 +29,7 @@
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 5,
-          center: {lat: -33.713, lng: 150.367}
+          center: {lat: -31.713, lng: 159.367}
         });
 
         // Create an array of alphabetical characters used to label the markers.

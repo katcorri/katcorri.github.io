@@ -45,7 +45,7 @@
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'katcorri.github.io/heart50.png'});
+            {imagePath: 'katcorri.github.io/MarkerClustering/heart50.png'});
       }
       var locations = [
         {lat: -31.563910, lng: 147.154312},

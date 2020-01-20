@@ -28,7 +28,7 @@ function initMap() {
   var crosses = {lat: 56.015, lng: 23.416};
   // The map, centered at The Hill of Crosses
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 10, center: crosses});
+      document.getElementById('map'), {zoom: 12, center: crosses});
   // The marker, positioned in Lithuania
   var marker = new google.maps.Marker({position: crosses, map: map});
 }

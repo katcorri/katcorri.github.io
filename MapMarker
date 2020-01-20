@@ -6,11 +6,19 @@
       #map {
         height: 400px;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
+        background-color: CornflowerBlue;
        }
+       html, body {
+        height: 100%;
+        margin:0;
+        padding: 0;
+        text-align: center;
+       }
+        
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h1>Marker Map Adder/h1>
     <!--The div element for the map -->
     <div id="map"></div>
     <script>

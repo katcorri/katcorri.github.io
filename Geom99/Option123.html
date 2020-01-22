@@ -79,6 +79,12 @@ function initMap() {
             label: labels[i % labels.length]
           });
         });
+function drop() {
+        clearMarkers();
+        for (var i = 0; i < neighborhoods.length; i++) {
+          addMarkerWithTimeout(neighborhoods[i], i * 200);
+        }
+      }
 
         // Add a marker clusterer to manage the markers.
   var markerCluster = new MarkerClusterer(map, markers,

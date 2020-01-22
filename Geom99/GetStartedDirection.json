@@ -1,3 +1,27 @@
+My Version:
+
+https://maps.googleapis.com/maps/api/directions/json?origin=Killarney%20&destination=ThunderBay&key=AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k
+
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ2W6XtAw8RUgRwHQxl6nHAAo",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJjekWTHchWU0RdIsdjzRXBT0",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "routes" : [],
+   "status" : "ZERO_RESULTS"
+}
+
+
+
+Demonstration:
 https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k
 
 	

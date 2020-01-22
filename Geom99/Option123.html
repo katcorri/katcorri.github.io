@@ -70,8 +70,10 @@ occupation as of the Pleistocene era (2,580,000 to 11,700 years ago) </p>
         });
 
         // Create an array of alphabetical characters used to label the markers.
+       //base template is from google https://developers.google.com/maps/documentation/javascript/marker-clustering
         var labels = '12345678';
 
+        //base template is from google https://developers.google.com/maps/documentation/javascript/marker-clustering
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
             position: location,
@@ -80,6 +82,7 @@ occupation as of the Pleistocene era (2,580,000 to 11,700 years ago) </p>
         });
 
         // Add a marker clusterer to manage the markers.
+        //base template is from google https://developers.google.com/maps/documentation/javascript/marker-clustering
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
@@ -92,7 +95,7 @@ occupation as of the Pleistocene era (2,580,000 to 11,700 years ago) </p>
         {lat: 41.5745, lng: -82.316},
         {lat: 44.2312, lng: -76.4860},
       ]
-
+ //base template is from google https://developers.google.com/maps/documentation/javascript/marker-clustering
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>

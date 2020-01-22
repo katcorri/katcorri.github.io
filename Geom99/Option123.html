@@ -56,10 +56,11 @@ html, body{
 This was, and still is, a very controversial site within the archaeological record due to radio-carbon dating methods. 
 However, as of 2017 Université de Montréal's Department of Anthropology has published information that there is evidence of human 
 occupation as of the Pleistocene era (2,580,000 to 11,700 years ago) </p>
-<div id="map"></div>
-   <script>
- 
-function initMap() {
+
+   <div id="map"></div>
+    <script>
+
+      function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 3,
@@ -67,7 +68,7 @@ function initMap() {
         });
 
         // Create an array of alphabetical characters used to label the markers.
-        var labels = '123456789';
+        var labels = '12345678';
 
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
@@ -76,26 +77,24 @@ function initMap() {
           });
         });
 
-}
-    
-    
- var markerCluster = new MarkerClusterer(map, markers,
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
-
-      var locations = [
+        var locations = [
         {lat: 64.8070, lng: -140.317},
         {lat: 38.6589, lng: -77.0650},
         {lat: 40.3684, lng: -80.4880},
       ]
+
     </script>
-       <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k&callback=initMap">
     </script>
-
+  </body>
 
  
  

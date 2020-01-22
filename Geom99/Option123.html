@@ -1,10 +1,16 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+ 
+<meta name="viewport" content="initial-scale=1.0">
+<meta charset="utf-8">
+ 
 <title>Option 1 Geom 99</title>
 <style>
 
+ #map {
+  height: 400px;
+ }
  h1 {
   text-align: center;
   color: #000080;
@@ -24,7 +30,10 @@ ul {
  list-style-type: none;
  }
 html, body{
-  background-color:#faf0e6;
+ background-color:#faf0e6;
+ height: 100%;
+ margin: 0;
+ padding: 0;
   }
  
 </style>
@@ -46,6 +55,47 @@ html, body{
 This was, and still is, a very controversial site within the archaeological record due to radio-carbon dating methods. 
 However, as of 2017 Université de Montréal's Department of Anthropology has published information that there is evidence of human 
 occupation as of the Pleistocene era (2,580,000 to 11,700 years ago) </p>
+ 
+function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = '123456789';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: 64.13528, lng: 140.51861},
+        {lat: 38.6859, lng: 77.0650},
+        {lat: 40.2864, lng: 80.4888},
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+
+ 
+ 
 </body>
 
  <footer> <ul> <li>Source:https://www.livescience.com/40311-pleistocene-epoch.html </li> 

@@ -1,1 +1,4 @@
 AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k
+
+Details Link
+https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyCRxwTL2WXB_7y9oUknFivSaQLr-KXm87k

@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-    <title>ArcGIS JavaScript Tutorials: Create a JavaScript starter app</title>
-      <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS JavaScript Tutorials: Select a basemap</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/css/main.css">
   <script src="https://js.arcgis.com/4.13/"></script>
- 
- <script>
-   //Toogle a basemap
-   //require add a reference to basemap toggle and basemapgallery modules
-   require([
+  
+  <script>  
+    require([
       "esri/Map",
       "esri/views/MapView",
       "esri/widgets/BasemapToggle",
       "esri/widgets/BasemapGallery"
     ], function(Map, MapView, BasemapToggle, BasemapGallery) {
-         //create a basemaptoggle widget, set the view and nextbasemap property to sattelite
-     var basemapToggle = new BasemapToggle({
-        view: view,
-        nextBasemap: "satellite"
+
+      var map = new Map({
+        basemap: "topo-vector"
       });
-     // this adds the widget to the bottom right corner of the view by addint it to the views defaultUI  
-     view.ui.add(basemapToggle, "bottom-right");
-     
-    var map = new Map({
-      basemap: "topo-vector",
-      ground: "world-elevation"  // show elevation
+      
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-118.80543,34.02700],
+        zoom: 13
+      });
+      
+//       var basemapToggle = new BasemapToggle({
+//         view: view,
+//         secondMap: "satellite"
+//       });
+      
+//       view.ui.add(basemapToggle,"bottom-right");
+     // use basemap gallery widget 
+      var basemapGallery = new BasemapGallery({
+        view: view,
+        source: {
+          portal: {
+            url: "http://www.arcgis.com",
+            useVectorBasemaps: true, // Load vector tile basemap group
+          },
+        } 
+      });
+// this makes it into the top right
+      view.ui.add(basemapGallery, "top-right"); // Add to the view
+      
     });
-
-    var view = new SceneView({
-      container: "viewDiv",
-      map: map,
-      camera: {
-        position: {  // observation point
-          x: -118.80800,
-          y: 33.96100,
-          z: 25000 // altitude in meters
-        },
-        tilt: 65  // perspective in degrees
-      }
-    });
-  });
-
-   
   </script>
-
-    <style>
-      html, body, #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="viewDiv"></div>
-  </body>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
 </html>

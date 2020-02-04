@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>ArcGIS JavaScript Tutorials: Create a JavaScript starter app</title>
+      <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.13/"></script>
+ 
+ <script>
+  require([
+      "esri/Map",
+      "esri/views/SceneView"
+    ], function(Map, SceneView) {
+
+    var map = new Map({
+      basemap: "topo-vector",
+      ground: "world-elevation"  // show elevation
+    });
+
+    var view = new SceneView({
+      container: "viewDiv",
+      map: map,
+      camera: {
+        position: {  // observation point
+          x: -118.80800,
+          y: 33.96100,
+          z: 25000 // altitude in meters
+        },
+        tilt: 65  // perspective in degrees
+      }
+    });
+  });
+  </script>
+
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

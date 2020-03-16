@@ -26,7 +26,7 @@ map.on('load', function() {
 map.addSource('wms-test-source', {
 'type': 'raster',
 'tiles': [
-'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/export?bbox=2509326.9612865876%2C430201.35614499915%2C1.0195848681513408E7%2C5471226.440955001&bboxSR=102100%283857%29&layers=&layerDefs=&size=&imageSR=&historicMoment=&format=png&transparent=true&dpi=&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&rotation=&datumTransformations=&layerParameterValues=&mapRangeValues=&layerRangeValues=&f=html'
+'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=EPSG%3A3857&layers=0&layerDefs=&size=256%2c256&imageSR=&format=png&transparent=true&dpi=&time=&layerTimeOptions=&dynamicLayers=&gdbVersion=&mapScale=&f=image'
 ],
 'tileSize': 256
 });

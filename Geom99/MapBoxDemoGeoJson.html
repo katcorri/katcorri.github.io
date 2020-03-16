@@ -14,7 +14,7 @@
 <body>
 <div id="map"></div>
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0Y29ycmkiLCJhIjoiY2s3ZHI4c283MWlpbzNlcXJobTFleHN5OSJ9.FauiW48Gu9nr_3OA0m6IwQ';
+	mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0Y29ycmkiLCJhIjoiY2s3djFnMTJsMTgwczNzbzRhOW5hM2o0ZyJ9.NKmqGwBFNPDkUQjeNhpYTQ';
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/light-v10',
@@ -26,7 +26,7 @@ map.on('load', function() {
 map.addSource('wms-test-source', {
 'type': 'raster',
 'tiles': [
-'https://img.nj.gov/imagerywms/Natural2015?bbox={bbox-epsg-3857}&format=image/png&service=WMS&version=1.1.1&request=GetMap&srs=EPSG:3857&transparent=true&width=256&height=256&layers=Natural2015'
+'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/0/query?where=PRNAME+%3D+%27Alberta%27&text=&objectIds=&time=&geometry=&geometryType=esriGeometryPolygon&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson'
 ],
 'tileSize': 256
 });

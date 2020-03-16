@@ -32,14 +32,11 @@ map.addSource('wms-test-source', {
 });
 map.addLayer(
 {
-'id': 'wms-test-layer',
-'type': 'raster',
-'source': 'wms-test-source',
-'paint': {}
-},
-'aeroway-line'
-);
-});
+'id': 'canada',
+'type': 'fill',
+'source': 'canada',
+'layout': {},
+'paint': {'fill-color':'#088','fill-opacity':0.9} }); });
 </script>
  
 </body>

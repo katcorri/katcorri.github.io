@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Add a WMS source</title>
+<title>Add live realtime data</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
@@ -13,30 +13,30 @@
 </head>
 <body>
 <div id="map"></div>
+ 
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0Y29ycmkiLCJhIjoiY2s3djFnMTJsMTgwczNzbzRhOW5hM2o0ZyJ9.NKmqGwBFNPDkUQjeNhpYTQ';
 var map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/light-v10',
-zoom: 3,
-center: [-96.0, 64.6892]
+style: 'mapbox://styles/katcorri/ck7v0cpsp00061ipcuq2awddu',
+zoom: 3
 });
  
+var url = 'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/0/query?where=PRNAME+%3D+%27Alberta%27&text=&objectIds=&time=&geometry=&geometryType=esriGeometryPolygon&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson';
 map.on('load', function() {
-map.addSource('wms-test-source', {
-'type': 'raster',
-'tiles': [
-'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/0/query?where=PRNAME+%3D+%27Alberta%27&text=&objectIds=&time=&geometry=&geometryType=esriGeometryPolygon&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson'
-],
-'tileSize': 256
-});
-map.addLayer(
-{
+window.setInterval(function() {
+map.getSource('canada').setData(url);
+}, 2000);
+ 
+map.addSource('canada', { type: 'geojson', data: url });
+map.addLayer({
 'id': 'canada',
 'type': 'fill',
 'source': 'canada',
-'layout': {},
-'paint': {'fill-color':'#088','fill-opacity':0.9} }); });
+'layout': {
+'paint': {fill-color': '#088'.'fill-opacity': 0.5}
+});
+});
 </script>
  
 </body>

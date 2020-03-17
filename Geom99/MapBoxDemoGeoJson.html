@@ -23,7 +23,7 @@ zoom: 3,
 center: [-98.0, 64.00]
 });
  
-var url = 'https://luna.flemingcollege.ca/arcgis/rest/services/DemoMapExample/MapServer/0/query?where=PRNAME%3D%27Ontario%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
+var url = 'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99on/katCorriCanadaPro/MapServer/0/query?where=PRNAME%3D%27Alberta%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
 map.on('load', function() {
 window.setInterval(function() {
 map.getSource('canada').setData(url);

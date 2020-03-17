@@ -19,7 +19,8 @@
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/katcorri/ck7v0cpsp00061ipcuq2awddu',
-zoom: 3
+zoom: 3,
+center: [-98.0, 64.00]
 });
  
 var url = 'https://luna.flemingcollege.ca/arcgis/rest/services/DemoMapExample/MapServer/0/query?where=PRNAME%3D%27Ontario%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
@@ -34,7 +35,7 @@ map.addLayer({
 'type': 'fill',
 'source': 'canada',
 'layout': {},
-'paint': {fill-color': '#088','fill-opacity': 0.5}
+'paint':{'fill-color': '#088','fill-opacity':0.8}
 });
 });
 </script>
